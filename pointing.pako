@@ -1,0 +1,22 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+if ("&1none".eq."none") then
+   say "E-POINT, Only one parameter needed: source name"
+   return base
+endif
+!
+source "&1" /cat * /vel lsr 10
+offset /clear
+!
+back /clear
+backend bbc /default
+!
+swbeam
+!
+cal /def
+start
+!
+point /def
+start
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

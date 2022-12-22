@@ -1,0 +1,5 @@
+! Set the receivers to observe the 12CO (2-1) line.
+
+receiver /clear
+receiver E230 COemission 231 UI /horizontal LI UI /vertical LI UI
+

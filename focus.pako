@@ -1,0 +1,7 @@
+backend /clear
+backend bbc /def     !! Focus is always done using the continuum backends.
+
+swbeam               !! Focus is always done in swbeam mode.
+
+focus
+start

@@ -1,0 +1,22 @@
+@~/132-20/backend.pako
+
+
+
+
+SWTOTAL                                   - !  select total power
+  /TPHASE        1.0                        !  time per phase (data sample)
+!
+calibrate /default
+start
+!
+ONOFF           0  0                 - !  offsets of on position
+  /NSUBSCANS    12                        - !  number of subscans
+  /REFERENCE    +1166.4 -1391.75   projection   - !  offsets of off-source reference
+  /SYSTEM       projection               - !  system for offsets
+  /TSUBSCAN     30                         !  time per subscan
+!
+START                                       !  start
+START
+next
+!
+

@@ -1,0 +1,191 @@
+Project number: 129-22
+PI name and e-mail: Yue Hu \& Alex Lazarian
+                    yue.hu@wisc.edu \& alazarian@facstaff.wisc.edu 
+
+******************************************
+* 1.- scientific summary of the project: *
+******************************************
+The goal of this project is to map 12CO (2-1)， 13CO (2-1) and C18O (2-1) line emission in the M16 cloud with the IRAM-30m.
+
+We use the EMIR receivers together with the FTS200 backend. The line is observed in E230 band mode.
+
+We use the OTF PSW observing mode to cover a region of ~ 15' x 20'. The target sensitivity is 275 mK per 0.25 km s-1 channel, which should be reached in ~15 hours of telescope time, assuming average winter conditions (4.0 mm of PWV).
+
+******************************************
+*    2.- Summary of the observations:    *
+******************************************
+
+! Make the OTF map
+
+! We map a region of 900 x 1200". 
+！At the 12CO (2-1) frequency, the telescope EMIR is about 10.67", 
+！so we have 2.4 points/beam.  
+！The scan speed is 14"/sec and the data sample is 0.25 s, i.e. one spectra every 3.5". 
+！We observe the reference position for 10 s every 2 scans. 
+！We make a first sub-map along the RA direction, make a
+! calibration, and then a second sub-map along the Dec direction. 
+
+! We would like to observe 12co(2-1), 13co(2-1), and c18o(2-1) simultaneously
+
+Source      Observed once ?   Observed twice ? (Mark a X)
+m16									
+
+
+********************************************************
+* 3.-Step-by-Step Instructions to observe the project: *
+********************************************************
+
+@ ~/Pako/129-22/setup.pako 
+@ ~/Pako/129-22/receiver
+@ ~/Pako/129-22/backend
+
+source A-PLANET-OR-STRONG-SOURCE
+
+
+calibrate /default
+start
+
+
+*** Wait until the operator tune the telecope
+
+
+
+calibrate /default ! Do another calibration to check if the system temperatures are OK 
+start
+
+
+source A-PLANET-OR-A-STRONG-SOURCE
+@ ~/Pako/129-22/pointing.pako
+      
+set point  YY XX     !Please enter the pointing corrections
+
+@ ~/Pako/129-22/focus.pako
+
+set focus FF   ! Please enter the pointing corrections
+
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+      
+set point  YY XX     !Please enter the pointing corrections
+
+
+
+=====================
+PLEASE CHECK THE REFERENCE POSITION
+
+
+source OFF-1
+@~/Pako/129-22/checkref.pako
+
+Is clean?? if so please continue with the maps
+
+=======================
+
+
+source m16
+
+@~/Pako/129-22/backend.pako     !load the backends again 
+
+@~/Pako/129-22/beta-1.pako        !it last ~ 12 min 
+@~/Pako/129-22/beta-2.pako   
+@~/Pako/129-22/beta-3.pako
+@~/Pako/129-22/beta-4.pako
+@~/Pako/129-22/beta-5.pako
+@~/Pako/129-22/beta-6.pako
+@~/Pako/129-22/beta-7.pako
+@~/Pako/129-22/beta-8.pako
+@~/Pako/129-22/beta-9.pako
+@~/Pako/129-22/beta-10.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/beta-11.pako
+@~/Pako/129-22/beta-12.pako
+@~/Pako/129-22/beta-13.pako
+@~/Pako/129-22/beta-14.pako
+@~/Pako/129-22/beta-15.pako
+@~/Pako/129-22/beta-16.pako
+@~/Pako/129-22/beta-17.pako
+@~/Pako/129-22/beta-18.pako
+@~/Pako/129-22/beta-19.pako
+@~/Pako/129-22/beta-20.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/beta-21.pako
+@~/Pako/129-22/beta-22.pako
+@~/Pako/129-22/beta-23.pako
+@~/Pako/129-22/beta-24.pako
+@~/Pako/129-22/beta-25.pako
+@~/Pako/129-22/beta-26.pako
+@~/Pako/129-22/beta-27.pako
+@~/Pako/129-22/beta-28.pako
+@~/Pako/129-22/beta-29.pako
+@~/Pako/129-22/beta-30.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/beta-31.pako
+@~/Pako/129-22/beta-32.pako
+@~/Pako/129-22/beta-33.pako
+@~/Pako/129-22/beta-34.pako
+@~/Pako/129-22/beta-35.pako
+@~/Pako/129-22/beta-36.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/lambda-1.pako        !it last ~ 12 min 
+@~/Pako/129-22/lambda-2.pako   
+@~/Pako/129-22/lambda-3.pako
+@~/Pako/129-22/lambda-4.pako
+@~/Pako/129-22/lambda-5.pako
+@~/Pako/129-22/lambda-6.pako
+@~/Pako/129-22/lambda-7.pako
+@~/Pako/129-22/lambda-8.pako
+@~/Pako/129-22/lambda-9.pako
+@~/Pako/129-22/lambda-10.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/lambda-11.pako
+@~/Pako/129-22/lambda-12.pako
+@~/Pako/129-22/lambda-13.pako
+@~/Pako/129-22/lambda-14.pako
+@~/Pako/129-22/lambda-15.pako
+@~/Pako/129-22/lambda-16.pako
+@~/Pako/129-22/lambda-17.pako
+@~/Pako/129-22/lambda-18.pako
+@~/Pako/129-22/lambda-19.pako
+@~/Pako/129-22/lambda-20.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/lambda-21.pako
+@~/Pako/129-22/lambda-22.pako
+@~/Pako/129-22/lambda-23.pako
+@~/Pako/129-22/lambda-24.pako
+@~/Pako/129-22/lambda-25.pako
+@~/Pako/129-22/lambda-26.pako
+@~/Pako/129-22/lambda-27.pako
+@~/Pako/129-22/lambda-28.pako
+@~/Pako/129-22/lambda-29.pako
+@~/Pako/129-22/lambda-30.pako
+
+source A-STRONG-NEARBY-SOURCE
+@ ~/Pako/129-22/pointing.pako
+
+@~/Pako/129-22/lambda-31.pako
+@~/Pako/129-22/lambda-32.pako
+@~/Pako/129-22/lambda-33.pako
+@~/Pako/129-22/lambda-34.pako
+@~/Pako/129-22/lambda-35.pako
+@~/Pako/129-22/lambda-36.pako
+
+
